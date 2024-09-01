@@ -1,0 +1,1252 @@
+/* --- global rules */
+* {
+    padding:0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --mainColor: #19c8fe;
+    --transparentColorBlue: rgb(15 116 143 / 70%);
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    /* background-color: black; */
+}
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small screen */
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+/* medium screen */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/*  large screen */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* ---------------- end of global rules */
+
+/* ---- address component---- */
+
+ .main-heading {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+ .main-heading h2{
+    font-size: 3rem;
+    font-weight: normal;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+ .main-heading h2::before{
+    content:"";
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.main-heading h2::after{
+    content:"";
+    height: 2px;
+    width: 10%;
+    background-color: black;
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+ .heading p{
+    color: #777;
+    letter-spacing: 1px;
+}
+
+
+/* header---------------------------- */
+header {
+   
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+    
+}
+header .container::after {
+    content: "";
+    height: 2px;
+    width: calc(100% - 30px);
+    background-color: #a2a2a2;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+
+header .container img {
+    height: 40px;
+}
+
+header .container .logo {
+    margin: -9px;
+    padding: 0px;
+}
+
+
+
+header nav {
+    /* --------- to make the nav element take the rest of the place----- */
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header nav .toggle-bar {
+    color: white;
+    font-size: 22px;
+}
+@media (min-width: 768px){
+    header nav .toggle-bar{
+        display: none;
+    }
+}
+
+header nav ul {
+    display: flex;
+}
+@media (max-width: 767px){
+    header nav ul{
+        display: none;
+    }
+
+    header nav .toggle-bar:hover + ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
+    header nav .toggle-bar:hover + ul li a{
+        padding: 15px;
+    }
+}    
+
+header nav ul a {
+    display: block;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 40px 10px;
+}
+header nav ul a.active, 
+header nav ul a:hover {
+    color: var(--mainColor);
+    border-bottom: 2px solid var(--mainColor);
+    position: relative;
+    z-index: 2;
+}
+
+header .container .form  {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 1px solid white;
+}
+
+header .container .form i {
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/* ================== landing ========== */
+.landing {
+    min-height: 100vh;
+    background-color: #1f2021;
+    background-image: url(../images/enchanted-twilight-forest-stockcake.jpg);
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+.landing .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.425);
+    width: 100%;
+    height: 100%;
+}
+.landing .overlay .text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 40px;
+    background-color: var(--transparentColorBlue);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+.landing .content {
+    max-width: 80%;
+}
+
+@media (max-width: 767px){
+
+    .landing .overlay .text {
+        width: 100%;
+    }
+    .landing .content {
+        max-width: 100%;
+    }
+}
+.landing .content h2{
+    font-size: 32;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.landing .content p{
+    font-size: 14px;
+    line-height: 1.6;
+}
+.landing .overlay i:first-of-type{
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+}
+.landing .overlay i:last-of-type{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+}
+
+@media (max-width: 767px) {
+    .landing .overlay i {
+        display: none;
+    }
+}
+.landing .bullets {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    width:70px;
+}
+.landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.landing .bullets li.active {
+    background-color: var(--mainColor);
+    border: none;
+}
+/* ---end section try======================= */
+
+/* ------------------services------------------ */
+.services .container {
+    margin-bottom: 100px;
+}
+.services .container .services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+}
+.services .container .services-container .desk{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+@media (max-width: 425px){
+    .services .container .services-container .desk{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.services .container .services-container .desk i{
+    margin-right: 30px;
+    font-size: 50px;
+}
+.services .container .services-container .desk h2{
+    color: var(--mainColor);
+    padding-bottom: 40px;
+}
+.services .container .services-container .desk p{
+    color: #777;
+}
+/* ---------------------------- end ------------------------- */
+.landing-2 {
+    background-image: url(../images/astronaut-moon-walk-stockcake.jpg);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+.landing-2 .text{
+    background-color: var(--transparentColorBlue);
+    color: white;
+    position: absolute;
+    top: 50%;
+    right:0;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 40px;
+}
+@media (max-width: 767px){
+
+    .landing-2 .text {
+        width: 100%;
+    }
+    
+}
+
+.landing-2 .text h3 {
+    padding : 20px 20px 20px 0px;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.landing-2 .text ul li {
+    padding: 10px 10px 10px 0;
+    text-transform: capitalize;
+}
+.landing-2 .text ul li i {
+    padding-right: 10px;
+}
+
+.landing-2 .image  {
+    position: relative;
+    bottom: -133px;
+    /* left: 10px; */
+    overflow: hidden;
+}
+
+.landing-2 .image img {
+    position: relative;
+    bottom: -100px;
+    left: 180px;
+}
+
+@media (max-width: 1100px){
+
+    .landing-2 .image {
+        display: none;
+    }
+    
+}
+/* ----------end --------- */
+
+/* --------------------------------- portfolio----------------- */
+.port {
+    margin-bottom: 100px;
+}
+
+.port .box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.port .box .box-foto {
+    width: 25%;
+    height:50%;
+    position: relative;
+    overflow: hidden;
+}    
+
+@media (max-width: 767px){
+    .port .box .box-foto {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-width: 1000px){
+    .port .box  {
+        height: auto;
+    }
+    .port .box .box-foto {
+        width: 50%;
+        height: auto;
+    }
+}
+
+.port .box .box-foto .adrs {
+    text-transform: capitalize;
+    padding: 10px 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    display: none;
+}
+.port .box .box-foto .adrs h4{
+    font-weight: normal; 
+    padding-bottom: 10px;
+}
+.port .box .box-foto .adrs p{
+    color: var(--mainColor);
+    font-weight: normal;
+}
+
+.port .box .box-foto img{
+    max-width: 100%;
+    height: 100%;
+}
+.port .box .box-foto:hover img{
+    transform: scale(1.1) rotate(3deg);
+}
+
+.port .box .box-foto:hover div.adrs {
+    display: block;
+}
+
+
+.port .bttn {
+    width: fit-content;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px;
+    background-color: var(--mainColor);
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+}
+/* --------------------- end portfolio-------------------- */
+/* --------------------------------------------------------- video section----------------- */
+.vid-section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+} 
+.vid-section video{
+    width: 100%;
+   
+}
+.vid-section .text-container {
+    background-color: var(--transparentColorBlue);
+    color: white;
+    padding: 20px 50px;
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;    
+    text-transform: capitalize;
+}
+.vid-section .text-container h4 {
+    font-size: 50px;
+    font-weight: normal ;
+    letter-spacing: 2px;
+}
+@media (max-width: 810px){
+    .vid-section .text-container h4 {
+        font-size: 16px;
+    }
+}
+.vid-section .text-container p {
+    font-size: 30px;
+}
+@media (max-width: 810px){
+    .vid-section .text-container p {
+        font-size: 16px;
+    }
+}
+.vid-section .text-container .bttn {
+    background-color: black;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 810px){
+    .vid-section .text-container .bttn {
+        padding: 2px 5px;
+    }
+}
+
+/* ------------------------------ end---------------- */
+
+/* frist pic */
+.about-section .scrn-img{
+    position: relative;
+    height: 200px;
+   
+    overflow: hidden;
+  
+}
+.about-section .scrn-img img{
+    position: absolute;
+    max-width: 100%;
+    top:0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media(max-width: 767px){
+    .about-section .scrn-img{
+        height: 150px;
+        margin-right: 15px;
+    }
+}
+
+/*  secound pic */
+
+.about-section .full-img {
+    position: relative;
+}
+.about-section .full-img img{
+    width: 100%;
+    height: 400px;
+}
+
+/* ------tbl----- */
+.about-section .full-img .tbl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: var(--transparentColorBlue);
+    padding: 40px;
+    max-height: 100%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    color: white;
+}
+.about-section .full-img .tbl .box {
+    text-align: center;
+    text-transform: capitalize;
+    width: 25%;
+    max-height: 100%;
+}
+@media (max-width: 992px){
+    .about-section .full-img .tbl .box{
+        max-width: 50%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 767px){
+    .about-section .full-img .tbl .box{
+        flex: 100%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+.about-section .full-img .tbl .box i,
+.about-section .full-img .tbl .box div.number {
+    margin-bottom: 15px;
+}
+.about-section .full-img .tbl .box i{
+    font-size: 1rem;
+    position: relative;
+}
+.about-section .full-img .tbl .box i::after {
+    content:"";
+    width: 160%;
+    height: 160%;
+    border-radius: 50%;
+    background-color: #1f2021;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.about-section .full-img .tbl .box .number{
+    font-size: 3rem;
+    font-weight: bold;
+}
+@media (max-width: 767px){
+    .about-section .full-img .tbl .box .number{
+        font-size: 1rem;
+        font-weight: normal;
+    }
+}
+
+/* ------------ end------------------- */
+
+/* --------------------------------------------- skills section--------------------- */
+
+.main-skills .container {
+   
+   
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-skills .container h5{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+
+}
+.main-skills .container .tisti {
+    padding: 15px;
+    flex: 1;
+    height: 100%;
+}
+@media (max-width:995px){
+
+    .main-skills .container .tisti {
+        flex:50%;
+    }
+}
+.main-skills .container .skills p:nth-child(2),
+.main-skills .container .tisti p:nth-child(2) {
+    color: var(--transparentColorBlue);
+    line-height: 1.5;
+    text-align: center;
+}
+.main-skills .container .tisti .ceo {
+    padding-top: 50px;
+    display: flex;
+    width: 100%;
+    line-height: 1.4;
+}
+.main-skills .container .tisti .ceo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.main-skills .container .tisti .ceo .pragraph {
+    border-bottom: 1px solid #777;
+    color: #777;
+}
+.main-skills .container .tisti .ceo .pragraph address{
+    display: flex;
+    justify-content: flex-end;
+    font-size: smaller;
+    color:#777;
+}
+
+.main-skills .container .tisti ul {
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    margin-top: 30px;
+}
+.main-skills .container .tisti ul li {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 50%;
+    border: 1px solid #777;
+}
+.main-skills .container .tisti ul li:nth-child(2) {
+    border: none;
+    background-color: var(--mainColor);
+}
+
+/* ---------skills------ */
+.main-skills .container .skills {
+    padding: 15px;
+    flex: 1;
+    height: 100%;
+    
+}
+@media (max-width:995px){
+
+    .main-skills .container .skills {
+        flex:50%;
+    }
+}
+
+.main-skills .container .skills .bullets {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.main-skills .container .skills .bullets div {
+    padding-top: 20px ;
+}
+.main-skills .container .skills .bullets div p {
+    text-transform: uppercase;
+    padding: 10px;
+    position: relative;
+    
+}
+.main-skills .container .skills .bullets div p::after {
+    content: "";
+    border: 6px solid;
+    border-color: black transparent transparent transparent;
+    position:absolute;
+    top: 0;
+    left: 50%;
+    
+}
+.main-skills .container .skills .bullets div p.fourth:after, 
+.main-skills .container .skills .bullets div p.first:after {
+    top: 75%;
+    left: 89%;
+}
+.main-skills .container .skills .bullets div p.second:after {
+    top: 75%;
+    left: 84%;
+}
+.main-skills .container .skills .bullets div p.third:after {
+    top: 75%;
+    left: 79%;
+}
+
+
+.main-skills .container .skills .bullets div span{
+    display: block;
+    max-width: 100%;
+    height: 20px;
+    background-color: #a2a2a2;
+    position: relative;
+}
+.main-skills .container .skills .bullets div span.fourth:before, 
+.main-skills .container .skills .bullets div span.first:before {
+    content:"";
+    width: 90%;
+    height: 100%;
+    
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.main-skills .container .skills .bullets div span.fourth::after, 
+.main-skills .container .skills .bullets div span.first::after {
+    content: "90%";
+    padding: 2px;
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 86%;
+}
+.main-skills .container .skills .bullets div span.second:before {
+    content:"";
+    width: 85%;
+    height: 100%;
+    
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-skills .container .skills .bullets div span.second::after {
+    content: "85%";
+    padding: 2px;
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 81%;
+}
+.main-skills .container .skills .bullets div span.third:before{
+    content:"";
+    width: 80%;
+    height: 100%;
+    
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.main-skills .container .skills .bullets div span.third::after{
+    content: "80%";
+    padding: 2px;
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 76%;
+}
+
+/* ---------------------- end ----------------- */
+/* ------------------quote---------------------------------------- */
+.quote{
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url(../images/planet.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: normal;
+    position: relative;
+}
+.quote::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0, 0, 0, 0.281);
+
+}
+.quote .container{
+    position: relative;
+    font-size: 2rem;
+}
+.quote .container q{
+    position: relative;
+}
+.quote .container q::before {
+    font-family: 'font awesome 5 free';
+    content: '\f10d';
+    font-weight: 900;
+    position: relative;
+    top: -8px;
+    left: -16px;
+    color: greenyellow;
+}
+.quote .container q::after {
+    font-family: 'font awesome 5 free';
+    content: '\f10e';
+    font-weight: 900;
+    position: relative;
+    top: 8px;
+    right:-16px;
+    color: greenyellow;
+}
+.quote .container cite {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    position: relative;
+    top: 42px;
+}
+/* ---------------------------landing-3 --------------------------------------------------- */
+
+.landing-3 .container .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+
+}
+.landing-3 .container .product-container .pro-box {
+    position: relative;
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 1.5;
+    padding: 10px 40px;
+   
+    background-color: #fcfcfc;
+    border-top: 1px solid var(--mainColor);
+}
+.landing-3 .container .product-container .pro-box::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 80%;
+    left: 0;
+}
+
+@media (max-width: 767px){
+    .landing-3 .container .product-container .pro-box{
+        flex: 50%;
+    }
+}
+
+/* ------ div top---- */
+
+.landing-3 .container .product-container .pro-box .div-top h6 {
+    FONT-WEIGHT: normal;
+    font-size: 2rem;   
+    text-transform: uppercase;
+}
+
+
+.landing-3 .container .product-container .pro-box .div-top p {   
+    font-weight: bold;
+    position: relative;
+}
+.landing-3 .container .product-container .pro-box .div-top p::after {
+    content: "$";
+    font-size: 2rem;
+    font-weight: normal;
+    position: absolute;
+    top: 0;
+    left: 0;
+}   
+
+
+.landing-3 .container .product-container .pro-box .div-top p span {
+    font-size: 4rem;
+}
+/* ----- feature ------- */
+
+.landing-3 .container .product-container .pro-box .feature p {
+    padding: 20px;
+    border-bottom: 1px solid var(--mainColor);
+}
+.landing-3 .container .product-container .pro-box .feature p:nth-last-child(1) {
+
+    border-bottom: none;
+    
+}
+/* ----------- a ------------- */
+.landing-3 .container .product-container .pro-box .link  {
+    padding: 30px;
+}
+.landing-3 .container .product-container .pro-box a {
+    
+    font-size: 1rem;
+    font-weight: normal;
+    border: 1px solid var(--mainColor);
+    padding: 15px;
+}
+/* -------- contact---- */
+.landing-3 .cont{
+    margin-top: 25px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.landing-3 .cont p {
+    color: #777;
+    padding-bottom: 30px;
+}
+.landing-3 .cont a {
+    padding: 10px 20px; 
+    background-color: var(--mainColor);
+    color: white;
+}
+/* -------------------- end--------- */
+/* -----------------------------------------------  form  ----------------------- */
+
+.ham {
+    padding-top:100px ;
+    padding-bottom:100px ;
+    background-image: url(../images/enchanted-twilight-forest-stockcake.jpg);
+    background-size: cover;
+    position: relative;
+}
+.ham::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.116);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ham .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+@media (max-width: 991px){
+    .ham .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+.ham .container form{
+    
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 50px;
+
+}
+@media (max-width: 991px){
+    .ham .container form{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+
+.ham input{
+
+    text-transform: uppercase;
+    color: white;
+    max-height: 70px;
+}
+
+.ham .container form input[type="email"] {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--mainColor);
+    border-right: none;
+    padding: 10px 10px 10px 100px;
+    caret-color: var(--mainColor);
+    position: relative;
+}
+
+
+.ham .container form input::placeholder {
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.ham .container form::before {
+    font-family: 'font awesome 5 free';
+    content: "\f0e0";
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    left: 40px;
+}
+.ham .container form input[type="submit"] {
+    background-color: var(--mainColor);
+    outline: none;
+    border: 1px solid var(--mainColor);
+    color: white;
+    padding: 10px;
+    max-height: 70px;
+}
+
+@media (max-width: 991px){
+    .ham .container form input[type="email"]{
+        border-right: 1px solid var(--mainColor);
+        padding: 10px 10px 10px 30px;
+    }
+
+    .ham .container form::before{
+        top:4px;
+    }
+
+}
+
+.ham .container p{
+    flex: 50%;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* =========================== end form ================= */
+.landooo .container .main-box {
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+}
+@media (max-width: 991px){
+    .landooo .container .main-box {
+        justify-content: center;
+    }
+
+}
+.landooo .container .main-box form.in {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.landooo .container .main-box form.in input {
+    padding: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    text-transform: uppercase;
+    border: 1px solid #777;
+}
+.landooo .container .main-box form.in textarea{
+    min-height: 200px;
+    padding: 20px;
+    outline: none;
+    border: 1px solid #777;
+}
+.landooo .container .main-box form.in input[type="submit"] {
+    margin-top: 20px;
+    width: 200px;
+    align-self: flex-end;
+    background-color: var(--mainColor);
+    letter-spacing: 1px;
+    border: none;
+    color: white;
+    margin-bottom: 0;
+}
+
+
+/* -- side box-- */
+.landooo .container .main-box div.side {
+    width: 300px;
+    margin-bottom: 50px;
+}
+
+.landooo .container .main-box div.side .side-text-1 {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.landooo .container .main-box div.side .side-text-2 address {
+    line-height: 2;
+    color: #777;
+}
+.landooo .container .main-box div.side h4 {
+    padding-bottom: 30px; 
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.landooo .container .main-box div.side input{
+    outline: none;
+    border: none;
+    background: none;
+    padding: 5px 0px;
+}
+
+@media (max-width: 991px){
+    .landooo .container .main-box div.side {
+        text-align: center;
+    }
+    .landooo .container .main-box div.side input{
+        text-align: center;
+    }
+}
+/* --------------- end ---------------------- */
+.land-footer {
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-image: url(../images/astronaut-explores-moon-stockcake.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.land-footer::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    background-color: rgba(31, 32, 33, 0.24);
+}
+.land-footer .container {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+.land-footer .container img {
+    width: 100px;
+    align-self: center;
+    margin-bottom: 50px;
+}
+.land-footer .container img + p {
+    font-size: 2rem;
+    padding-bottom: 20px;
+    color: white;
+    
+}
+.land-footer .container .icons {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
+.land-footer .container .icons i {
+    margin-left: 20px;
+}
+
+.land-footer hr {
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 767px){
+    .land-footer hr {
+        width: 70%;
+    }
+
+}
+.land-footer p.p-f {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 1rem; 
+    position: relative;
+    z-index: 2;
+   
+}
+.land-footer p.p-f span {
+    color: var(--mainColor);
+}
+
+/* -------------------------------------- the end --------------------------------------------------------------------*/
+
