@@ -1050,7 +1050,7 @@ header .container .form i {
     outline: none;
     border: 1px solid var(--mainColor);
     border-right: none;
-    padding: 10px 10px 10px 100px;
+    padding: 10px 40px 10px 60px;
     caret-color: var(--mainColor);
     position: relative;
 }
@@ -1082,7 +1082,7 @@ header .container .form i {
 @media (max-width: 991px){
     .ham .container form input[type="email"]{
         border-right: 1px solid var(--mainColor);
-        padding: 10px 10px 10px 30px;
+        padding: 10px 40px 10px 60px;
     }
 
     .ham .container form::before{
